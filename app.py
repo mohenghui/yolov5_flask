@@ -1,6 +1,6 @@
 from importlib import import_module
 import os
-from flask_script import Manager
+# from flask_script import Manager
 from flask import Flask, render_template, Response, request, redirect, url_for
 
 # import camera driver
@@ -11,7 +11,7 @@ else:
 
 app = Flask(__name__)
 
-manager = Manager(app)
+# manager = Manager(app)
 NAME = ""
 FILE_FLAG = False
 
@@ -56,12 +56,12 @@ def upload():
     return redirect(url_for('index'))
 
 
-@manager.command
-def dev():
-    from livereload import Server
-    live_server = Server(app.wsgi_app)
-    live_server.watch("**/*.*")
-    live_server.serve(open_url=True)
+# @manager.command
+# def dev():
+#     from livereload import Server
+#     live_server = Server(app.wsgi_app)
+#     live_server.watch("**/*.*")
+#     live_server.serve(open_url=True)
 
 
 if __name__ == '__main__':
