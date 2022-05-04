@@ -7,3 +7,4 @@ yolov5 v6.x在flask上的部署
 注意注意不要把项目放在中文路径下的文件夹   
 CPU检测的用户需要在camera.py中修改select_device(0)为select_device('cpu')   
 视频效果见bilibili   
+https://www.bilibili.com/video/BV1eu411r7Qu?spm_id_from=333.999.0.0
