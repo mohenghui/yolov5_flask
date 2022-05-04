@@ -46,10 +46,12 @@ def upload():
     if request.method == 'POST':
         f = request.files['file']
         basepath = os.path.dirname(__file__)  # 当前文件所在路径
-        upload_path = os.path.join(basepath, 'static\\uploads', (f.filename))  # 注意：没有的文件夹一定要先创建，不然会提示没有该路径
-        f.save(upload_path)
+        upload_path='static\\uploads'
+        if not os.path.exists(upload_path):os.mkdir(upload_path)
+        upload_file_path = os.path.join(basepath, upload_path, (f.filename))  # 注意：没有的文件夹一定要先创建，不然会提示没有该路径
+        f.save(upload_file_path)
         global NAME, FILE_FLAG
-        NAME = upload_path
+        NAME = upload_file_path
         FILE_FLAG = True
     return redirect(url_for('index'))
 
