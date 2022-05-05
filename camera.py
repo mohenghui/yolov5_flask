@@ -35,7 +35,8 @@ class Camera(BaseCamera):
     def frames():
         out, weights, imgsz = \
             ROOT / 'inference/output', ROOT / 'runs/train/exp/weights/best.pt', 640
-        device = select_device(0)  # 0 or 0,1,2,3 or cpu 没有gpu的记得改为cpu
+        # device = select_device(0)  # 0 or 0,1,2,3 or cpu 没有gpu的记得改为cpu
+        device = select_device("cpu")  # 0 or 0,1,2,3 or cpu 没有gpu的记得改为cpu
         # Directories
         save_dir = increment_path(Path(out) / 'exp', exist_ok=False)  # increment run
         (save_dir).mkdir(parents=True, exist_ok=True)  # make dir
