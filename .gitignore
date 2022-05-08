@@ -1,0 +1,21 @@
+# ide
+.idea/*
+
+# python
+__pycache__/
+*.py[cod]
+
+# virtualenv
+venv/
+.venv/
+.python-version
+
+# Other
+.DS_Store
+
+# vscode
+.vscode
+
+# resource
+inference/output/*
+static/uploads

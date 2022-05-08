@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>火场被困人员检测系统</title>
+  </head>
+  <body>
+    <h1>火场被困人员检测系统</h1>
+    <div>
+        <h1>检测文件上传</h1>
+        <form action="/video" enctype='multipart/form-data' method='POST'>
+        <input type="file" name="file">
+        <input type="submit" value="上传">
+        </form>
+        <form action="/camera" enctype='multipart/form-data' method='POST'>
+        <input type="submit" value="摄像头检测">
+        </form>
+    </div>
+    <img src="{{ url_for('video_feed') }}" alt="">
+
+  </body>
+</html>
