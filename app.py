@@ -43,7 +43,7 @@ def video_feed():
         return Response(video_gen(Camera(NAME, True if NAME.endswith(('.jpg', '.png', '.jpeg', '.bmp')) else False)),
                         mimetype='multipart/x-mixed-replace; boundary=frame')
     elif CAMERA_FLAG:
-        return Response(video_gen(Camera("1",False)),#选择你的摄像头ID
+        return Response(video_gen(Camera("0",False)),#选择你的摄像头ID
                         mimetype='multipart/x-mixed-replace; boundary=frame')
     else:
         return Response(mimetype='multipart/x-mixed-replace; boundary=frame')
